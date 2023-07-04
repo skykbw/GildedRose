@@ -1,7 +1,7 @@
 package com.gildedrose;
 
 class GildedRose {
-    private static final String AGED_BRIE = "Aged Brie";
+    private static final String AGED_BRIE = "Changed Aged Brie";
     private static final String BACKSTAGE_PASSES = "Backstage passes to a TAFKAL80ETC concert";
     private static final String SULFURAS = "Sulfuras, Hand of Ragnaros";
     Item[] items;
@@ -11,6 +11,15 @@ class GildedRose {
     }
 
     public void updateQuality() {
+        for (int i = 0; i < items.length; i++) {
+            Item item = items[i];
+            updateQuality(item);
+            updateSellIn(item-1);
+
+        }
+    }
+
+    public void updateQualityAdd() {
         for (int i = 0; i < items.length; i++) {
             Item item = items[i];
             updateQuality(item);
